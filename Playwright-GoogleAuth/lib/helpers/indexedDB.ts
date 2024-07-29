@@ -1,7 +1,6 @@
 import fs from "fs";
 const authSession = ".auth/playwrightsolutions.json";
 
-// Save data to a JSON file
 export async function saveToJSON(data) {
   const jsonString = JSON.stringify(data, null, 2);
   fs.writeFile(authSession, jsonString, (err) => {
@@ -9,7 +8,6 @@ export async function saveToJSON(data) {
   });
 }
 
-// Fetch data from IndexedDB
 export async function fetchDataFromIndexedDB(page) {
   return page.evaluate(
     () =>
@@ -43,7 +41,6 @@ export async function fetchDataFromIndexedDB(page) {
   );
 }
 
-// Send data to IndexedDB
 export async function sendDataToIndexedDB(page) {
   let dataToRestore;
   try {
