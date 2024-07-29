@@ -1,16 +1,13 @@
-// playwright-extra is a drop-in replacement for playwright,
-// it augments the installed playwright with plugin functionality
 import { chromium } from "playwright-extra";
 import SessionPlugin from "puppeteer-extra-plugin-session";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 
 import * as OTPAuth from "otpauth";
 
-// Load the stealth plugin and use defaults (all tricks to hide playwright usage)
 const setupVideoDirectory = "./test-results/global-setup";
 const setupTracesArchivePath = "./test-results/global-setup/traces.zip";
 
-// Add the plugin to playwright
+// Add plugin playwright
 chromium.use(StealthPlugin()).use(SessionPlugin());
 
 let totpObject = {
@@ -50,7 +47,7 @@ async function globalSetup(): Promise<void> {
       .click();
     const page1 = await page1Promise;
 
-    // Logging in through Google Popup
+    // Logging Google Popup
     await page1.getByLabel("Email or phone").click();
     await page1.getByLabel("Email or phone").fill(email);
     await page1.getByRole("button", { name: "Next" }).click();
