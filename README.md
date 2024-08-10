@@ -7,7 +7,7 @@ Com este repositório, demonstro como utilizar o Playwright para autenticar-se e
 1. Crie um arquivo `.env` com as seguintes variáveis:
 
     ```plaintext
-    BASE_URL=https://www.tanyaaja.in
+    BASE_URL=
     GOOGLE_EMAIL=
     GOOGLE_PASSWORD=
     GOOGLE_OTP_SECRET=
